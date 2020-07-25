@@ -70,7 +70,7 @@ public class PageObject {
     public WebElement dressQuantity;
     @FindBy(css = "tr[id*='wishlist']>td:nth-child(5)>a")
     public WebElement viewHiddenList;
-    @FindBy(css = ".row")
+    @FindBy(css = ".row>li")
     public List<WebElement> wishListDresses;
     @FindBy(css = ".row .lnkdel")
     public WebElement removefromWishList;

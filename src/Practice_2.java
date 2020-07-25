@@ -37,16 +37,12 @@ public class Practice_2 extends BaseDriver {
         wait.until(ExpectedConditions.visibilityOf(page.viewHiddenList));
         js.executeScript("scroll(0,100)");
         page.viewHiddenList.click();
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector(".row"),0));
-        wait.until(ExpectedConditions.visibilityOf(page.wishListDresses.get(random)));
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector(".row>li"),0));
+       // wait.until(ExpectedConditions.visibilityOf(page.wishListDresses.get(random)));
         js.executeScript("scroll(0,500)");
         wait.until(ExpectedConditions.visibilityOf(page.removefromWishList));
         page.removefromWishList.click();
-        try {
-            wait.until(ExpectedConditions.visibilityOf(page.removefromWishList));
-        }catch (TimeoutException a){
-            System.out.println("dress is removed");
-        }
+        wait.until(ExpectedConditions.invisibilityOf(page.removefromWishList));
         Thread.sleep(4000);
         page.deleteWishList.click();
         wait.until(ExpectedConditions.alertIsPresent());
